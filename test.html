@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js'></script>
     <title>Interactive server-side Python shell</title>
     <style>
@@ -57,13 +56,7 @@
             height: 100%;
         }
     </style>
-    <script>
-        $(function () {
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/monokai");
-            editor.getSession().setMode("ace/mode/javascript");
-        });
-    </script>
+
 </head>
 <body>
     <div class='header'>
@@ -155,5 +148,10 @@
 </pre>
         </div>
     </div>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/javascript");
+    </script>
 </body>
 </html>
