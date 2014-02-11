@@ -243,6 +243,7 @@ function setupContainer(element, getValue) {
     return container;
 }
 
+
 exports.transformTextarea = function(element, loader) {
     var session;
     var container = setupContainer(element, function() {
@@ -1316,6 +1317,7 @@ require("./ext/error_marker");
 
 exports.config = require("./config");
 exports.require = require;
+exports.event = event;
 exports.edit = function(el) {
     if (typeof(el) == "string") {
         var _id = el;
