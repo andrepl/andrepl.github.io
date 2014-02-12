@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js'></script>
+    <link rel="stylesheet" href="css/codemirror.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js'></script>
+    <script src='js/codemirror-compressed.js'></script>
     <title>Interactive server-side Python shell</title>
     <style>
         html,body { margin: 0px; padding: 0px; height: 100%; background: silver; }
@@ -29,10 +31,12 @@
             bottom: 20px;
         }
         div.left-pane {
+            border: 2px inset white;
             background: silver;
-            resize: horizontal;
             width: 50%;
             overflow: auto;
+            position: relative;
+            display: block;
         }
         div.right-pane {
             border: 2px inset white;
@@ -56,7 +60,15 @@
             height: 100%;
         }
     </style>
-
+    <script>
+        $(function () {
+            var el = $("div.left-pane").get(0);
+            var w = $(".left-pane").width()-2;
+            var h = $(".left-pane").height()-2;
+            var ide = CodeMirror(el, {mode: 'python', lineNumbers: true, lineWrapping: true, viewportMargin: Infinity });
+            ide.setSize(w,h);
+        });
+    </script>
 </head>
 <body>
     <div class='header'>
@@ -148,10 +160,5 @@
 </pre>
         </div>
     </div>
-    <script>
-        var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/monokai");
-        editor.getSession().setMode("ace/mode/javascript");
-    </script>
 </body>
 </html>
