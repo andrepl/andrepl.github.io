@@ -13,9 +13,10 @@
         margin: 25px;
         border-radius: 20px;
         padding: 20px;box-shadow: 5px 5px 20px black;
-
+        min-height: 210px;
     }
     a.download {
+        margin-top: 20px;
         border: 1px solid #777;
         border-radius: 6px;
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
@@ -26,6 +27,7 @@
         color: #444;
         text-shadow: 1px 1px 0px #ffffff;
         box-shadow: 0px 0px 2px #333;
+        clear: both;
     }
     a.download:hover {
         color: #5dbf01;
@@ -35,21 +37,37 @@
         margin: 5px;
     }
     h1 {
-        /* Shadows are visible under slightly transparent text color */
+        margin: 2px 10px;
         color: rgba(93,191,1, 0.8);
         text-shadow: 1px 4px 6px #fff, 0 0 0 #000, 1px 4px 6px #fff;
+    }
+    a.screenshot {
+        box-shadow: 5px 5px 10px black;
+        border: 2px solid black;
+        float: right;
+        clear: left;
+        display: block;
+    }
+
+    a.screenshot img {
+        width: 480px;
+    }
+    a.screenshot:hover {
+        box-shadow: 5px 5px 10px black;
+        border: 2px solid #5dbf01;
+
     }
 </style>
 <body>
 <div class='main'>
+    <a class='screenshot' href="shelly-screenshot.png"><img src='shelly-screenshot.png' /></a>
     <h1>Shelly</h1>
     <p>A Google chrome extension to wrap the GAE dev server's interactive console with <a href="http://codemirror.net/">CodeMirror</a> editor.</p>
-
+    <p><strong>Note:</strong> the .crx file must be saved to your computer, and dragged into the chrome://extensions window manually.</p>
     <a class='download' href="Shelly.crx">
         <img src="icon128.png" style="height: 32px; width: 32px;float: left; margin: 5px;"/>
         <div class='label'>Download<br />Shelly.crx</div>
     </a>
-    <p><strong>Note:</strong> the .crx file must be saved to your computer, and dragged into the chrome://extensions window manually.</p>
 </div>
 
 </body>
